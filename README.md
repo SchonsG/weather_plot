@@ -8,3 +8,6 @@ url -> https://testdriven.io/blog/python-dependency-injection/
 
 This code is just to study about dependency injection in python.
 
+### Example of plot
+![](/tmp/moscow_plot.png "Moscow Plot")
+
