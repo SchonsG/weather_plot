@@ -10,8 +10,8 @@ def test_draw(monkeypatch):
     plot_date_mock = MagicMock()
     show_mock = MagicMock()
 
-    monkeypatch.setattr(matplotlib.pyplot, 'plot_date', plot_date_mock)
-    monkeypatch.setattr(matplotlib.pyplot, 'show', show_mock)
+    monkeypatch.setattr(matplotlib.pyplot, "plot_date", plot_date_mock)
+    monkeypatch.setattr(matplotlib.pyplot, "show", show_mock)
 
     plot = Plot()
     hours = [datetime.datetime.now()]
@@ -21,4 +21,3 @@ def test_draw(monkeypatch):
     _, called_temperatures = plot_date_mock.call_args[0]
     assert called_temperatures == temperatures
     show_mock.assert_called()
-

@@ -8,10 +8,10 @@ from plotly_plot import Plot
 
 def test_draw(monkeypatch):
     figure_mock = MagicMock()
-    monkeypatch.setattr(plotly.graph_objects, 'Figure', figure_mock)
+    monkeypatch.setattr(plotly.graph_objects, "Figure", figure_mock)
 
     scatter_mock = MagicMock()
-    monkeypatch.setattr(plotly.graph_objects, 'Scatter', scatter_mock)
+    monkeypatch.setattr(plotly.graph_objects, "Scatter", scatter_mock)
 
     plot = Plot()
     hours = [datetime.datetime.now()]
@@ -19,6 +19,5 @@ def test_draw(monkeypatch):
     plot.draw(hours, temperatures)
 
     call_kwargs = scatter_mock.call_args[1]
-    assert call_kwargs['y'] == temperatures
+    assert call_kwargs["y"] == temperatures
     figure_mock().show.assert_called()
-

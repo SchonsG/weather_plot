@@ -18,7 +18,7 @@ def test_read():
 
     app = App(data_source=data_source, plot=MagicMock())
 
-    assert app.read(file_name='something.csv') == temperature_by_hour
+    assert app.read(file_name="something.csv") == temperature_by_hour
 
 
 def test_draw():
@@ -36,7 +36,6 @@ def test_draw():
 
 
 def test_configure():
-    app = App.configure('config.json')
+    app = App.configure("config.json")
 
     assert isinstance(app, App)
-
